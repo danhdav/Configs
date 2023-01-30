@@ -1,0 +1,36 @@
+# This is my config
+
+# web browsers
+super + w
+    brave
+
+super + e
+    chromium
+
+# file manager
+super + shift + Return
+    pcmanfm
+
+# logout menu
+super + p
+    menu
+
+# screenshot
+super + u
+    maim --select | tee ~/Media/$(date +%s).png
+
+# slock
+super + shift + x
+    slock
+
+# volume down
+super + Down
+    pamixer -d 5 && pkill -RTMIN+6 dwmblocks
+
+# volume up
+super + Up
+    pamixer -i 5 && pkill -RTMIN+6 dwmblocks
+
+# reload sxhkd
+super + shift + r
+    pkill -USR1 -x sxhkd

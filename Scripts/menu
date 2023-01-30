@@ -1,0 +1,19 @@
+#!/bin/bash
+
+actions=("restart\nshutdown\nsleep")
+action=$(echo -e $actions | dmenu -fn "-xos4-terminus-medium-r-*-*-20-*")
+case "$action" in
+    restart)
+        systemctl reboot
+        ;;
+
+    shutdown)
+        # systemctl poweroff
+        shutdown now
+        ;;
+
+    sleep)
+        systemctl suspend
+        ;;
+
+esac
